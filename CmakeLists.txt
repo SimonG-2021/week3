@@ -1,0 +1,10 @@
+project(Week3)
+cmake_minimum_required(VERSION 3.18)
+
+add_executable(Week3)
+target_sources(Week3
+PRIVATE
+main.h
+main.cpp
+catch.hpp
+)
