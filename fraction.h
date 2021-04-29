@@ -13,16 +13,17 @@ public:
     void setFraction(double numerator, double denominator);
     void setValueN(double value);
     void setValueD(double value);
+
     double getValueD();
     double getValueN();
     double getDecimal();
-    void shorten();
     
+    void shorten();
     void printFraction();
+    
     fraction operator+(fraction b);
     fraction operator-(fraction b);
     fraction operator*(fraction b);
     fraction operator/(fraction b);
     bool fraction::operator==(fraction b);
-    
 };
