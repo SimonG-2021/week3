@@ -1,10 +1,18 @@
-project(Week3)
+project(Week3-1)
 cmake_minimum_required(VERSION 3.18)
 
-add_executable(Week3)
-target_sources(Week3
+add_executable(master)
+target_sources(master
 PRIVATE
 main.h
 main.cpp
 catch.hpp
+)
+
+
+add_executable(develop)
+target_sources(develop
+PRIVATE
+catch.hpp
+test.cpp
 )
