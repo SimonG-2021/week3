@@ -45,7 +45,34 @@ double fraction::getValueN()
 void fraction::printFraction()
 {
     //String Ausgabe besser
-    cout << "fraction:" << m_numerator << "/" << m_denominator << "\n";
+    std::cout << "fraction:" << m_numerator << "/" << m_denominator << "\n";
 }
 
 //Operator Überladung
+fraction fraction::operator+(fraction b)
+{
+    fraction result;
+    result.setFraction((this->getValueN()*b.getValueD())+(this->getValueD()*b.getValueN()),this->getValueD()*b.getValueD());
+    return result;
+};
+fraction fraction::operator*(fraction b)
+{
+    fraction result;
+    result.setFraction((this->getValueN() * b.getValueN()), this->getValueD() * b.getValueD());
+    return result;
+}; 
+
+fraction fraction::operator-(fraction b)
+{
+    fraction result;
+    result.setFraction((this->getValueN() * b.getValueD()) - (this->getValueD() * b.getValueN()), this->getValueD() * b.getValueD());
+    return result;
+}; 
+
+fraction fraction::operator/(fraction b)
+{
+    fraction result;
+    result.setFraction((this->getValueN() / this->getValueD()) , b.getValueN() / b.getValueD());
+    return result;
+};
+

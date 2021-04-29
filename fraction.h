@@ -15,7 +15,12 @@ public:
     void setValueD(double value);
     double getValueD();
     double getValueN();
-    static double print();
-
+    
     void printFraction();
+    fraction operator+(fraction b);
+    fraction operator-(fraction b);
+    fraction operator*(fraction b);
+    fraction operator/(fraction b);
+    
+    
 };

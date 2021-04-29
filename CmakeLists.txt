@@ -6,6 +6,8 @@ target_sources(master
 PRIVATE
 main.h
 main.cpp
+fraction.h
+fraction.cpp
 catch.hpp
 )
 
@@ -13,6 +15,9 @@ catch.hpp
 add_executable(develop)
 target_sources(develop
 PRIVATE
+fraction.h
+fraction.cpp
+
 catch.hpp
 test.cpp
 )

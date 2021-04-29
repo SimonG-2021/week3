@@ -23,11 +23,20 @@ int main()
     fraction bruch2(1,2);
     fraction bruch6(6,5);
     bruch1.setFraction(4, 6);
-  
-    fraction summe = bruch6 + bruch2;
+    cout << "\n\n\n";
+    bruch2.printFraction();
+    bruch6.printFraction();
+    fraction summe= bruch6 + bruch2;
+    summe.printFraction();
+    fraction summe2 = bruch6 - bruch2;
+    summe2.printFraction();
+    fraction summe3 = bruch6 * bruch2;
+    summe3.printFraction();
+    fraction summe4 = bruch2 / bruch6;
+    summe4.printFraction();
+    cout << "\n\n\n";
     //fraction bruch3= bruch1 + summe;
     bruch1.printFraction();
-    summe.printFraction();
     int a=5;
     cin>>a;
     std::cout<<"Hello World";
