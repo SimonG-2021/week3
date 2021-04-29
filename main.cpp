@@ -16,29 +16,52 @@ static void mul(fraction a, fraction b);
 static void div(fraction a, fraction b);
 //square root
 */
-
+void test();
 int main()
 {
-    fraction bruch1;
-    fraction bruch2(1,2);
-    fraction bruch6(6,5);
-    bruch1.setFraction(4, 6);
-    cout << "\n\n\n";
-    bruch2.printFraction();
-    bruch6.printFraction();
-    fraction summe= bruch6 + bruch2;
-    summe.printFraction();
-    fraction summe2 = bruch6 - bruch2;
-    summe2.printFraction();
-    fraction summe3 = bruch6 * bruch2;
-    summe3.printFraction();
-    fraction summe4 = bruch2 / bruch6;
-    summe4.printFraction();
-    cout << "\n\n\n";
-    //fraction bruch3= bruch1 + summe;
-    bruch1.printFraction();
-    int a=5;
-    cin>>a;
-    std::cout<<"Hello World";
-    return 5;
+    test();
+
+    //fraction bruch1;
+    //fraction bruch2(1,2);
+    //fraction bruch6(6,5);
+ 
+    //bruch1.setFraction(4, 6);
+    //cout << "\n\n\n";
+    //bruch2.printFraction();
+    //bruch6.printFraction();
+    //fraction summe= bruch6 + bruch2;
+    //summe.printFraction();
+    //fraction summe2 = bruch6 - bruch2;
+    //summe2.printFraction();
+    //fraction summe3 = bruch6 * bruch2;
+    //summe3.printFraction();
+    //fraction summe4 = bruch2 / bruch6;
+    //summe4.printFraction();
+    //cout << "\n\n\n";
+    ////fraction bruch3= bruch1 + summe;
+    //bruch1.printFraction();
+    //int a=5;
+    //cin>>a;
+    //std::cout<<"Hello World";
+    //return 5;
+}
+void test()
+{
+    fraction f1(1, 1);
+    fraction f2(1, 2);
+    fraction f3(2, 1);
+    fraction f4(2, 2);
+    fraction f5(3, 2);
+    fraction f6(2, 1);
+
+
+    if (f1 + f1 == f3)
+    {
+        std::cout << "affe";   
+    }
+    else
+    {
+        std::cout << "esel";
+    }
+
 }

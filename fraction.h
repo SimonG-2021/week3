@@ -15,12 +15,14 @@ public:
     void setValueD(double value);
     double getValueD();
     double getValueN();
+    double getDecimal();
+    
     
     void printFraction();
     fraction operator+(fraction b);
     fraction operator-(fraction b);
     fraction operator*(fraction b);
     fraction operator/(fraction b);
-    
+    bool fraction::operator==(fraction b);
     
 };

@@ -1,6 +1,7 @@
 #include "fraction.h"
 #include <cassert>
 #include <iostream>
+#include <math.h>
 
 #define assertm(exp, msg) assert(((void)msg, exp))
 
@@ -41,6 +42,12 @@ double fraction::getValueN()
 {
     return m_numerator;
 }
+// keine double
+double fraction::getDecimal()
+{
+    return  std::floor(((m_numerator /m_denominator) * 1000) + .5)/1000;
+}
+
 
 void fraction::printFraction()
 {
@@ -61,18 +68,33 @@ fraction fraction::operator*(fraction b)
     result.setFraction((this->getValueN() * b.getValueN()), this->getValueD() * b.getValueD());
     return result;
 }; 
-
 fraction fraction::operator-(fraction b)
 {
     fraction result;
     result.setFraction((this->getValueN() * b.getValueD()) - (this->getValueD() * b.getValueN()), this->getValueD() * b.getValueD());
     return result;
 }; 
-
 fraction fraction::operator/(fraction b)
 {
     fraction result;
     result.setFraction((this->getValueN() / this->getValueD()) , b.getValueN() / b.getValueD());
     return result;
 };
+
+bool fraction::operator==(fraction b)
+{
+    //displays not equal
+    if (this->getDecimal() == b.getDecimal())
+    {
+        return true;
+    }
+    return false;
+
+
+  
+
+};
+//ganze Zahlen
+//erweitern
+//kürzen
 
