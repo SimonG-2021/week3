@@ -8,13 +8,13 @@
 
 fraction::fraction() : m_numerator(1), m_denominator(1)
 {
-    printFraction();
+   // printFraction();
 }
 
 fraction::fraction(double init_n, double init_d)
 {
     setFraction(init_n, init_d);
-    printFraction();
+    //printFraction();
 }
 
 void fraction::setFraction(double numerator, double denominator)
@@ -30,8 +30,20 @@ void fraction::setValueN(double value)
 
 void fraction::setValueD(double value)
 {
-    assertm(value == 0, "Fehler 0");
-    m_denominator = value;
+    
+    if (value == 0) {
+
+        //assertm(value == 0, "Fehler 0");
+        std::cout << "Fehler";
+        system("Pause");
+    }
+    else
+    {
+
+        m_denominator = value;
+
+    }
+
 }
 
 double fraction::getValueD()
@@ -46,14 +58,14 @@ double fraction::getValueN()
 // keine double
 double fraction::getDecimal()
 {
-    return  std::floor(((m_numerator /m_denominator) * 1000) + .5)/1000;
+    return std::floor(((m_numerator /m_denominator) * 1000) + .5)/1000;
 }
 
 void fraction::shorten()
 {
-    int ggT = std::gcd(m_denominator, m_numerator);
-    m_denominator /= ggT;
-    m_numerator /= ggT;
+    //int ggT = std::gcd(static_cast<int>(m_numerator), static_cast<int>(m_denominator));
+   // m_denominator /= ggT;
+    //m_numerator /= ggT;
 }
 
 void fraction::printFraction()
