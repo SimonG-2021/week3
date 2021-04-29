@@ -1,5 +1,7 @@
 #include "main.h"
 #include <iostream>
+#include <cassert>
+#define assertm(exp, msg) assert(((void)msg, exp))
 using namespace std;
 
 class fraction{
@@ -8,42 +10,49 @@ private:
     double m_denominator;
     //double val;
 
-public:
-    fraction():m_numerator(0), m_denominator(0) { cout << "construct a fraction" << m_numerator << "/" << m_denominator << "\n"; }
-    fraction(double init_c, double init_d):m_numerator(0),m_denominator(0) 
-    {
-        this->m_numerator = init_c;
-        this->m_denominator = init_d;
-        cout << "construct a fraction" << m_numerator << "/" << m_denominator << "\n";
+public: 
+    fraction() :m_numerator(1), m_denominator(1) {
+        printFraction();
+    }
+    fraction(double init_n, double init_d):m_numerator(0),m_denominator(0) 
+    {         
+        setFraction(init_n, init_d);
+        printFraction();
     }
 
-    void fraction::newfraction(double numerator, double denominator) {};
-void fraction::newValueC(double value){
+void fraction::setFraction(double numerator, double denominator){
+            setValueN(numerator);
+            setValueD(denominator);
+};
+void fraction::setValueN(double value){
     m_numerator = value;
 }
-void fraction::newValueD(double value) {
+void fraction::setValueD(double value) {
+    assertm(value==0,"Fehler 0");
     m_denominator = value;
 }
 double fraction::getValueD() {
     return m_denominator;
 }
-double fraction::getValueC() {
+double fraction::getValueN() {
     return m_numerator;
 }
 void fraction::printFraction(){
+    //String Ausgabe besser
     cout << "fraction:" << m_numerator << "/" << m_denominator << "\n";
 }
+
 //Operator Überladung
+
 fraction fraction::sum(fraction a, fraction b) {
-   // int value = a.m_numerator / a.m_denominator + b.m_numerator/b.m_denominator;
-    fraction result;
-    
+    fraction result;    
     result.m_numerator = a.m_numerator * b.m_denominator+ a.m_denominator * b.m_numerator;
     result.m_denominator= a.m_denominator * b.m_denominator;
 
 
     return result;
 }
+void sum2() {}
 fraction fraction::sub(fraction a, fraction b);
 fraction fraction::mul(fraction a, fraction b);
 fraction fraction::div(fraction a, fraction b);
@@ -57,8 +66,8 @@ int main()
     fraction bruch1;
     fraction bruch2(1,2);
     fraction bruch6(6,5);
-    bruch1.newValueC(6);
-    bruch1.newValueD(6);
+    bruch1.setFraction(4, 6);
+  
     fraction summe = summe.sum(bruch6, bruch2);
     //fraction bruch3= bruch1 + summe;
     bruch1.printFraction();
