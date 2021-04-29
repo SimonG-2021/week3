@@ -2,6 +2,7 @@
 #include <cassert>
 #include <iostream>
 #include <math.h>
+#include <numeric>
 
 #define assertm(exp, msg) assert(((void)msg, exp))
 
@@ -48,6 +49,12 @@ double fraction::getDecimal()
     return  std::floor(((m_numerator /m_denominator) * 1000) + .5)/1000;
 }
 
+void fraction::shorten()
+{
+    int ggT = std::gcd(m_denominator, m_numerator);
+    m_denominator /= ggT;
+    m_numerator /= ggT;
+}
 
 void fraction::printFraction()
 {

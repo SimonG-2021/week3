@@ -16,7 +16,7 @@ public:
     double getValueD();
     double getValueN();
     double getDecimal();
-    
+    void shorten();
     
     void printFraction();
     fraction operator+(fraction b);
